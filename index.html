@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qadam — математикадан жеке AI-репетитор</title>
+<meta name="description" content="Qadam — балаңыз нақты нені түсінбейтінін табатын AI-репетитор.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top">Qadam</a>
+
+    <nav class="nav" id="primary-nav">
+      <a href="#how" data-i18n="nav.how"></a>
+      <a href="#parents" data-i18n="nav.parents"></a>
+      <a href="#pricing" data-i18n="nav.pricing"></a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-wrap">
+        <select id="lang-select" class="lang-select" aria-label="Language">
+          <option value="kk">қазақша</option>
+          <option value="ru">русский</option>
+          <option value="en">english</option>
+          <option value="uz">oʻzbekcha</option>
+          <option value="ky">кыргызча</option>
+        </select>
+      </div>
+      <button class="btn btn-ghost hide-sm" data-cta data-i18n="nav.login"></button>
+      <button class="btn btn-primary" data-cta data-i18n="nav.start"></button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#how" data-i18n="nav.how"></a>
+    <a href="#parents" data-i18n="nav.parents"></a>
+    <a href="#pricing" data-i18n="nav.pricing"></a>
+    <button class="btn btn-ghost full" data-cta data-i18n="nav.login"></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="pill"><i class="dot"></i><span data-i18n="hero.badge"></span></span>
+      <h1 data-i18n="hero.title" data-i18n-html></h1>
+      <p class="lead" data-i18n="hero.sub"></p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary btn-lg" data-cta>
+          <span data-i18n="hero.cta1"></span> <span class="arrow">→</span>
+        </button>
+        <a class="btn btn-outline btn-lg" href="#how" data-i18n="hero.cta2"></a>
+      </div>
+      <p class="micro" data-i18n="hero.meta"></p>
+
+      <div class="stats">
+        <div class="stat"><b>61</b><span data-i18n="hero.stat1"></span></div>
+        <div class="stat"><b data-i18n="hero.stat2num"></b><span data-i18n="hero.stat2"></span></div>
+        <div class="stat"><b>5</b><span data-i18n="hero.stat3"></span></div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <svg class="hero-fallback" viewBox="0 0 640 560" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#EFEDFD"/><stop offset="1" stop-color="#DEE7F7"/>
+          </linearGradient>
+        </defs>
+        <rect width="640" height="560" fill="url(#g1)"/>
+        <rect x="118" y="176" width="404" height="270" rx="18" fill="#fff" stroke="#D8DBEA" stroke-width="2"/>
+        <text x="152" y="240" font-family="Inter, sans-serif" font-size="26" font-weight="700" fill="#4F39E6">3x + 6 = 18</text>
+        <text x="152" y="292" font-family="Inter, sans-serif" font-size="20" fill="#8A90A2">x = ?</text>
+        <rect x="152" y="330" width="230" height="12" rx="6" fill="#E9EAF3"/>
+        <rect x="152" y="358" width="170" height="12" rx="6" fill="#E9EAF3"/>
+        <rect x="152" y="386" width="200" height="12" rx="6" fill="#E9EAF3"/>
+      </svg>
+      <img class="hero-photo" src="assets/hero.jpg" alt="" onerror="this.remove()">
+    </div>
+  </div>
+
+  <div class="price-band">
+    <div class="container band-inner">
+      <span class="band-label" data-i18n="band.label"></span>
+      <span class="band-item"><span data-i18n="band.free"></span> <b>0 ₸</b></span>
+      <span class="band-item"><span data-i18n="band.learn"></span> <b>4 990 ₸</b></span>
+      <span class="band-item"><span data-i18n="band.family"></span> <b>7 990 ₸</b></span>
+      <a class="band-link" href="#pricing"><span data-i18n="band.all"></span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMO ============ -->
+<section class="section section-white">
+  <div class="container narrow">
+    <p class="section-kicker center" data-i18n="demo.kicker"></p>
+
+    <div class="card problem-card">
+      <p class="muted small" data-i18n="demo.solve"></p>
+      <p class="equation">3x + 6 = 18</p>
+      <hr class="rule">
+      <p class="answer-row">
+        <span class="muted small" data-i18n="demo.answer"></span>
+        <b class="mono">x = 8</b>
+        <span class="tag tag-red">✕ <span data-i18n="demo.wrong"></span></span>
+      </p>
+    </div>
+
+    <div class="compare">
+      <div class="card compare-card muted-card">
+        <p class="eyebrow gray" data-i18n="demo.oldTitle"></p>
+        <p class="compare-answer"><span data-i18n="demo.oldAnswer"></span> <b class="mono">x = 4</b></p>
+        <p class="muted" data-i18n="demo.oldText"></p>
+      </div>
+
+      <div class="card compare-card accent-card">
+        <p class="eyebrow accent" data-i18n="demo.newTitle"></p>
+        <p class="mini-label" data-i18n="demo.cause"></p>
+        <p data-i18n="demo.causeText"></p>
+        <div class="next-task">
+          <p class="mini-label accent" data-i18n="demo.nextLabel"></p>
+          <p class="equation sm">4x + 8 = 24</p>
+        </div>
+        <p class="check"><span class="ok">✓</span> <span data-i18n="demo.result"></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS ============ -->
+<section class="section section-soft">
+  <div class="container">
+    <h2 class="h2 center narrow-title" data-i18n="pain.title"></h2>
+    <div class="grid grid-2 gap-lg">
+      <div class="card pad-lg">
+        <span class="warn">⚠</span>
+        <h3 data-i18n="pain.t1"></h3>
+        <p class="muted" data-i18n="pain.d1"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="warn">⚠</span>
+        <h3 data-i18n="pain.t2"></h3>
+        <p class="muted" data-i18n="pain.d2"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="warn">⚠</span>
+        <h3 data-i18n="pain.t3"></h3>
+        <p class="muted" data-i18n="pain.d3"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="warn">⚠</span>
+        <h3 data-i18n="pain.t4"></h3>
+        <p class="muted" data-i18n="pain.d4"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section-white" id="how">
+  <div class="container">
+    <p class="eyebrow accent center" data-i18n="how.eyebrow"></p>
+    <h2 class="h2 center" data-i18n="how.title"></h2>
+    <p class="section-sub center" data-i18n="how.sub"></p>
+
+    <div class="grid grid-3 gap-lg steps">
+      <div class="card pad-lg">
+        <span class="step-num">01</span>
+        <h3 data-i18n="how.s1t"></h3>
+        <p class="muted" data-i18n="how.s1d"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="step-num">02</span>
+        <h3 data-i18n="how.s2t"></h3>
+        <p class="muted" data-i18n="how.s2d"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="step-num">03</span>
+        <h3 data-i18n="how.s3t"></h3>
+        <p class="muted" data-i18n="how.s3d"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="step-num">04</span>
+        <h3 data-i18n="how.s4t"></h3>
+        <p class="muted" data-i18n="how.s4d"></p>
+      </div>
+      <div class="card pad-lg">
+        <span class="step-num">05</span>
+        <h3 data-i18n="how.s5t"></h3>
+        <p class="muted" data-i18n="how.s5d"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT SHOTS ============ -->
+<section class="section section-soft">
+  <div class="container">
+    <p class="eyebrow accent center" data-i18n="product.eyebrow"></p>
+    <h2 class="h2 center" data-i18n="product.title" data-i18n-html></h2>
+    <p class="section-sub center" data-i18n="product.sub"></p>
+
+    <div class="grid grid-3 gap-lg shots">
+
+      <!-- shot 1 -->
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar">
+            <span class="app-logo">Q</span>
+            <span class="app-select">english ⌄</span>
+            <span class="app-link">Log out</span>
+          </div>
+          <div class="app-body">
+            <h4 class="app-h">Knowledge map</h4>
+            <p class="app-p">Here is what 16 questions told us</p>
+            <div class="app-stats">
+              <div class="app-stat"><span>Overall level</span><b class="accent-text">67%</b></div>
+              <div class="app-stat"><span>Correct answers</span><b>13<i>/16</i></b></div>
+            </div>
+            <div class="app-panel warn-panel">
+              <p class="app-panel-title">⚠ What to fix first</p>
+              <ol class="app-list">
+                <li><i>1</i><span><b>Fraction Arithmetic</b><em>Rational Numbers</em></span></li>
+                <li><i>2</i><span><b>Powers with Natural Exponents</b><em>Rational Numbers</em></span></li>
+                <li><i>3</i><span><b>Moving a Term Across the Equals Sign</b><em>Linear Equations</em></span></li>
+                <li><i>4</i><span><b>Dividing by the Coefficient</b><em>Linear Equations</em></span></li>
+                <li><i>5</i><span><b>Expanding Brackets in Equations</b><em>Linear Equations</em></span></li>
+                <li><i>6</i><span><b>Equations with Fractional Coefficients</b><em>Linear Equations</em></span></li>
+              </ol>
+              <p class="app-note">Order matters: foundations first, or the rest will not hold.</p>
+            </div>
+            <p class="app-p strong">By topic</p>
+            <div class="app-bar-row">
+              <span>Rational Numbers</span>
+              <span class="app-pct">47%</span>
+            </div>
+            <div class="app-progress"><i style="width:47%"></i></div>
+          </div>
+        </div>
+        <figcaption>
+          <b data-i18n="product.c1t"></b>
+          <span class="muted" data-i18n="product.c1d"></span>
+        </figcaption>
+      </figure>
+
+      <!-- shot 2 -->
+      <figure class="shot">
+        <div class="app">
+          <div class="app-top">
+            <span>Correct in a row: <b>0</b></span>
+            <span>Difficulty: <b>1/5</b></span>
+          </div>
+          <div class="app-progress thin"><i style="width:20%"></i></div>
+          <div class="app-body">
+            <div class="app-panel plain">
+              <p class="app-p">Solve the equation: <b>2x + 7 = 11</b></p>
+              <p class="app-p">Your answer: <b>9</b></p>
+            </div>
+            <div class="app-panel red-panel">
+              <p class="app-panel-title red">✕ Incorrect</p>
+              <p class="app-mini">WHAT CAUSED THE MISTAKE <em>computed</em></p>
+              <p class="app-p">The term 7 was moved to the right without flipping its sign: 11 + 7 was computed instead of 11 − 7. Crossing the equals sign always flips the sign.</p>
+            </div>
+            <div class="app-board">
+              <p class="board-label">ON THE BOARD</p>
+              <p class="board-eq">2x + 7 = 11</p>
+              <div class="board-step"><i>1</i><span>Move 7 to the right, flipping its sign<b>2x = 4</b></span></div>
+              <div class="board-actions"><span class="board-btn">Next 1/2</span><span class="board-link">Show all</span></div>
+            </div>
+            <div class="app-cta">Next problem →</div>
+          </div>
+        </div>
+        <figcaption>
+          <b data-i18n="product.c2t"></b>
+          <span class="muted" data-i18n="product.c2d"></span>
+        </figcaption>
+      </figure>
+
+      <!-- shot 3 -->
+      <figure class="shot">
+        <div class="app">
+          <div class="app-bar">
+            <span class="app-logo">Q</span>
+            <span class="app-select">english ⌄</span>
+            <span class="app-link">Log out</span>
+          </div>
+          <div class="app-body">
+            <h4 class="app-h">My children</h4>
+            <p class="app-p">What exactly your child does not know, and what the platform does about it</p>
+            <span class="app-chip">Your plan: Family</span>
+            <div class="app-panel plain child">
+              <p class="child-name">Aisha <em>aisha</em></p>
+              <div class="app-alert warn">⚠ Stuck on «Moving a Term Across the Equals Sign»: 9 attempts, almost all wrong</div>
+              <div class="app-alert ok">✦ Mastered 1 topic this week</div>
+              <div class="app-alert ok">✦ Confirmed 3 skills</div>
+              <div class="app-bar-row small"><span>3 of 32 confirmed</span><span class="app-pct">9%</span></div>
+              <div class="app-progress"><i style="width:9%"></i></div>
+              <div class="child-stats">
+                <div><span>Solved</span><b>54</b></div>
+                <div><span>Accuracy</span><b>83%</b></div>
+                <div><span>Last seen</span><b>25 Aug</b></div>
+              </div>
+              <div class="app-panel warn-panel tight">
+                <p class="app-panel-title">⚠ Needs attention</p>
+                <ul class="app-plain-list">
+                  <li>Moving a Term Across the Equals Sign</li>
+                  <li>Dividing by the Coefficient</li>
+                  <li>Expanding Brackets in Equations</li>
+                  <li>Equations with Fractional Coefficients</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption>
+          <b data-i18n="product.c3t"></b>
+          <span class="muted" data-i18n="product.c3d"></span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFFERENCE ============ -->
+<section class="section section-white">
+  <div class="container split">
+    <div>
+      <p class="eyebrow accent" data-i18n="diff.eyebrow"></p>
+      <h2 class="h2" data-i18n="diff.title"></h2>
+      <p class="lead" data-i18n="diff.text"></p>
+      <blockquote class="quote" data-i18n="diff.quote"></blockquote>
+    </div>
+
+    <div class="card pad-lg flow">
+      <p class="eyebrow gray" data-i18n="diff.flowTitle"></p>
+      <div class="flow-step" data-i18n="diff.f1"></div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-step" data-i18n="diff.f2"></div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-step is-accent" data-i18n="diff.f3"></div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-step" data-i18n="diff.f4"></div>
+      <span class="flow-arrow">↓</span>
+      <div class="flow-step is-ok" data-i18n="diff.f5"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI TUTOR ============ -->
+<section class="section section-soft">
+  <div class="container split">
+    <div>
+      <p class="eyebrow accent" data-i18n="tutor.eyebrow"></p>
+      <h2 class="h2" data-i18n="tutor.title"></h2>
+      <p class="lead" data-i18n="tutor.text"></p>
+      <ul class="check-list">
+        <li data-i18n="tutor.p1"></li>
+        <li data-i18n="tutor.p2"></li>
+        <li data-i18n="tutor.p3"></li>
+        <li data-i18n="tutor.p4"></li>
+      </ul>
+    </div>
+
+    <div class="card pad-lg chat">
+      <div class="chat-head">
+        <span class="chat-avatar">🎓</span>
+        <span><b>AI Tutor</b><em class="mono">3x = 12</em></span>
+      </div>
+      <div class="bubble bubble-user" data-i18n="tutor.q"></div>
+      <div class="bubble bubble-bot"><span class="bubble-icon">💬</span><span data-i18n="tutor.a"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARENTS ============ -->
+<section class="section section-brand" id="parents">
+  <div class="container split reverse">
+    <div class="card parent-card">
+      <p class="parent-name" data-i18n="parents.child"></p>
+      <div class="parent-row">
+        <span data-i18n="parents.mastery"></span><b>72%</b>
+      </div>
+      <div class="app-progress"><i style="width:72%"></i></div>
+      <p class="eyebrow gray mt" data-i18n="parents.week"></p>
+      <div class="parent-line"><span data-i18n="parents.solved"></span><b>87</b></div>
+      <div class="parent-line"><span data-i18n="parents.accuracy"></span><b>81%</b></div>
+      <div class="parent-line"><span data-i18n="parents.lastSeen"></span><b data-i18n="parents.yesterday"></b></div>
+      <hr class="rule">
+      <div class="parent-tags">
+        <div>
+          <p class="tag-title good" data-i18n="parents.strong"></p>
+          <p class="muted" data-i18n="parents.strongList" data-i18n-html></p>
+        </div>
+        <div>
+          <p class="tag-title bad" data-i18n="parents.weak"></p>
+          <p class="muted" data-i18n="parents.weakList" data-i18n-html></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="parent-copy">
+      <p class="eyebrow on-brand" data-i18n="parents.eyebrow"></p>
+      <h2 class="h2 on-brand" data-i18n="parents.title"></h2>
+      <p class="lead on-brand" data-i18n="parents.sub"></p>
+      <ul class="check-list on-brand">
+        <li><b data-i18n="parents.b1t"></b><span data-i18n="parents.b1d"></span></li>
+        <li><b data-i18n="parents.b2t"></b><span data-i18n="parents.b2d"></span></li>
+        <li><b data-i18n="parents.b3t"></b><span data-i18n="parents.b3d"></span></li>
+      </ul>
+      <button class="btn btn-white btn-lg" data-cta>
+        <span data-i18n="parents.cta"></span> <span class="arrow">→</span>
+      </button>
+      <p class="micro on-brand" data-i18n="parents.note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section-soft" id="pricing">
+  <div class="container">
+    <p class="eyebrow accent center" data-i18n="price.eyebrow"></p>
+    <h2 class="h2 center" data-i18n="price.title" data-i18n-html></h2>
+    <p class="section-sub center" data-i18n="price.sub"></p>
+
+    <div class="grid grid-3 gap-lg plans">
+      <div class="card plan">
+        <p class="eyebrow gray" data-i18n="price.freeName"></p>
+        <p class="plan-price">0 <span class="cur">₸</span></p>
+        <p class="muted plan-tag" data-i18n="price.freeTag"></p>
+        <hr class="rule">
+        <ul class="check-list sm">
+          <li data-i18n="price.f1"></li>
+          <li data-i18n="price.f2"></li>
+          <li data-i18n="price.f3"></li>
+          <li data-i18n="price.f4"></li>
+        </ul>
+        <button class="btn btn-primary full" data-cta data-i18n="price.freeCta"></button>
+      </div>
+
+      <div class="card plan plan-featured">
+        <span class="plan-badge" data-i18n="price.popular"></span>
+        <p class="eyebrow on-brand" data-i18n="price.learnName"></p>
+        <p class="plan-price">4 990 <span class="cur">₸</span><em data-i18n="price.perMonth"></em></p>
+        <p class="plan-tag on-brand" data-i18n="price.learnTag"></p>
+        <hr class="rule light">
+        <ul class="check-list sm on-brand">
+          <li data-i18n="price.l1"></li>
+          <li data-i18n="price.l2"></li>
+          <li data-i18n="price.l3"></li>
+          <li data-i18n="price.l4"></li>
+          <li data-i18n="price.l5"></li>
+        </ul>
+        <button class="btn btn-white full" data-cta data-i18n="price.choose"></button>
+      </div>
+
+      <div class="card plan">
+        <p class="eyebrow gray" data-i18n="price.famName"></p>
+        <p class="plan-price">7 990 <span class="cur">₸</span><em data-i18n="price.perMonth"></em></p>
+        <p class="muted plan-tag" data-i18n="price.famTag"></p>
+        <hr class="rule">
+        <ul class="check-list sm">
+          <li data-i18n="price.m1"></li>
+          <li data-i18n="price.m2"></li>
+          <li data-i18n="price.m3"></li>
+          <li data-i18n="price.m4"></li>
+        </ul>
+        <button class="btn btn-primary full" data-cta data-i18n="price.choose"></button>
+      </div>
+    </div>
+
+    <p class="micro center" data-i18n="price.note"></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section-white">
+  <div class="container narrow">
+    <h2 class="h2" data-i18n="faq.title"></h2>
+    <div class="faq">
+      <details>
+        <summary data-i18n="faq.q1"></summary>
+        <p class="muted" data-i18n="faq.a1"></p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q2"></summary>
+        <p class="muted" data-i18n="faq.a2"></p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q3"></summary>
+        <p class="muted" data-i18n="faq.a3"></p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q4"></summary>
+        <p class="muted" data-i18n="faq.a4"></p>
+      </details>
+      <details>
+        <summary data-i18n="faq.q5"></summary>
+        <p class="muted" data-i18n="faq.a5"></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section section-white pt-0">
+  <div class="container">
+    <div class="cta-box">
+      <h2 class="h2 on-brand" data-i18n="cta.title"></h2>
+      <p class="lead on-brand" data-i18n="cta.sub"></p>
+      <div class="hero-buttons center-buttons">
+        <button class="btn btn-white btn-lg" data-cta>
+          <span data-i18n="cta.primary"></span> <span class="arrow">→</span>
+        </button>
+        <a class="btn btn-outline-white btn-lg" href="#pricing" data-i18n="cta.secondary"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-logo">Qadam</p>
+      <p class="muted" data-i18n="footer.tagline"></p>
+    </div>
+    <p class="muted" data-i18n="footer.rights"></p>
+  </div>
+</footer>
+
+<!-- ============ MVP MODAL ============ -->
+<div class="modal" id="mvp-modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mvp-title">
+    <button class="modal-x" data-close aria-label="Close">✕</button>
+    <span class="modal-badge">MVP</span>
+    <h3 id="mvp-title">We are on MVP stage</h3>
+    <p class="modal-text">This is just a landing page — registration is not open yet.</p>
+    <p class="modal-sub muted" data-i18n="modal.sub"></p>
+    <button class="btn btn-primary full" data-close data-i18n="modal.ok"></button>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
