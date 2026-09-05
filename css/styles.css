@@ -151,11 +151,14 @@ button{font:inherit;color:inherit}
 .burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
 .burger span+span{margin-top:5px}
 
+/* the menu only ever shows on small screens, and only when not [hidden] */
 .mobile-menu{
   display:none;flex-direction:column;gap:6px;
   padding:10px 24px 20px;border-top:1px solid var(--line);background:#fff;
 }
 .mobile-menu a{padding:10px 0;font-weight:500}
+.mobile-menu .lang-select{margin:6px 0}
+.lang-select.full{width:100%}
 
 /* ---------- hero ---------- */
 .hero{background:linear-gradient(180deg,#FFFFFF 0%,#F3F2FD 62%,#EFEEFC 100%)}
@@ -521,19 +524,38 @@ body.no-scroll{overflow:hidden}
 @media (max-width:820px){
   .nav{display:none}
   .hide-sm{display:none}
+  /* the header must fit the phone: language moves into the menu */
+  .header-actions>.lang-wrap{display:none}
   .burger{display:block}
-  .mobile-menu{display:flex}
+  .mobile-menu:not([hidden]){display:flex}
   .header-inner{gap:12px;height:66px}
+  .logo{font-size:17px;padding:8px 16px}
+  .header-actions .btn-primary{padding:10px 14px;font-size:14.5px}
 }
 
 @media (max-width:720px){
   .grid-2,.grid-3,.compare,.shots,.parent-tags,.plans{grid-template-columns:1fr}
   .stats{gap:28px;flex-wrap:wrap}
-  .band-inner{gap:18px;font-size:13.5px}
+  .band-inner{gap:10px 18px;font-size:13.5px}
   .band-link{margin-left:0}
   .cta-box{padding:52px 24px}
   .problem-card{padding:24px}
   .equation{font-size:28px}
   .section{padding:60px 0}
   .footer-inner{align-items:flex-start}
+  /* the app mockups get the full card width here — grow the type with it */
+  .app{font-size:12.5px}
+  .app-h{font-size:19px}
+  .app-list b{font-size:12px}
+  .app-list em,.app-note,.child-stats span{font-size:11px}
+  .hero-buttons .btn{flex:1 1 100%}
+  /* left/right only — the shorthand would wipe the vertical padding
+     that .hero-grid and .band-inner set on their own containers */
+  .container{padding-left:20px;padding-right:20px}
+}
+
+@media (max-width:380px){
+  .logo{font-size:16px;padding:7px 13px}
+  .header-actions .btn-primary{padding:9px 12px;font-size:14px}
+  .header-actions{gap:8px}
 }

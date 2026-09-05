@@ -34,12 +34,18 @@
     return DEFAULT_LANG;
   }
 
-  var select = document.getElementById('lang-select');
+  var selects = document.querySelectorAll('.lang-select');
   var lang = initialLang();
-  if (select) {
+
+  selects.forEach(function (select) {
     select.value = lang;
-    select.addEventListener('change', function () { applyLang(select.value); });
-  }
+    select.addEventListener('change', function () {
+      /* keep the header and the mobile-menu switcher in sync */
+      selects.forEach(function (other) { other.value = select.value; });
+      applyLang(select.value);
+      closeMobileMenu();
+    });
+  });
   applyLang(lang);
 
   /* ---------------- MVP modal ---------------- */
